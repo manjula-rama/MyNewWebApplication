@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+function validate() {
+var user=document.getElementById('name').value;
+var password=document.getElementById('pw').value;
+if(user=="") {
+	document.getElementById('u').innerHTML="<font color=red>**please fill the username field</font>";
+	return false;
+	}
+if(password=="") {
+	document.getElementById('p').innerHTML="<font color=red>**please fill the username field</font>";
+	return false;
+}
+}
+</script>
+</head>
+<body bgcolor="blue">
+
+<center>
+<form action="LoginServlet" onSubmit="return validate()" background-color="blue" method="POST">
+
+<h1 align="center">Registration form</h1>
+
+
+Enter username:<br>
+<input type="text" name="user" id="name"><br>
+<span id="u"></span><br>
+
+Enter paasword:<br>
+<input type="password" name="pass" id="pw"><br>
+<span id="p"></span><br>
+
+<input type="submit" value="login">
+
+</form>
+</center>
+
+</body>
+</html>

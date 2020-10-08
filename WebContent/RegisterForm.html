@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+function validate() {
+var user=document.getElementById('name').value;
+var password=document.getElementById('pw').value;
+var cpassword=document.getElementById('cpw').value;
+var mobile=document.getElementById('mobile').value;
+var email=document.getElementById('eid').value;
+
+
+if(user=="") {
+document.getElementById('u').innerHTML="<font color=red>**please fill the username field</font>";
+return false;
+}
+if((user.length<3)||(user.length>20)) {
+document.getElementById('u').innerHTML="<font color=red>**user length must between 3 and 20</font>";
+return false;
+}
+if(!isNaN(user)) {
+document.getElementById('u').innerHTML="<font color=red>**user field must contain characters only</font>";
+return false;
+}
+
+if(password=="") {
+var user=document.getElementById('p').innerHTML="<font color=red>**please fill the password field</font>";
+return false;
+}
+if((password.length<3)||(password.length>20)) {
+document.getElementById('p').innerHTML="<font color=red>**password length must between 3 and 20</font>";
+return false;
+}
+if(password!=cpassword) {
+document.getElementById('p').innerHTML="<font color=red>**password and confirm password must be same</font>";
+return false;
+}
+if(cpassword=="") {
+document.getElementById('c').innerHTML="<font color=red>**please fill the confirmpassword field</font>";
+return false;
+}
+if(mobile=="") {
+document.getElementById('m').innerHTML="<font color=red>**please fill the mobile field</font>";
+return false;
+}
+if(isNaN(mobile)) {
+document.getElementById('m').innerHTML="<font color=red>**moblie number must have digits</font>";
+return false;
+}
+if(mobile.length!=10) {
+document.getElementById('m').innerHTML="<font color=red>**mobile number must have 10 digits</font>";
+return false;
+}
+
+if(email=="") {
+document.getElementById('e').innerHTML="<font color=red>**please fill the email field</font>";
+return false;
+}
+
+
+
+}
+</script>
+<style>
+body{background-color:gray;}
+form{background-color:pink;}
+h1{color:red;}
+input{background-color:yellow;}
+}
+</style>
+</head>
+<body>
+<center>
+<form action="RegisterFormServlet" onSubmit="return validate()" background-color="blue" method="POST">
+
+<h1 align="center">Registration form</h1>
+
+
+Enter username:<br>
+<input type="text" name="user" id="uname"><br>
+<span id="u"></span><br>
+
+Enter paasword:<br>
+<input type="password" name="pass" id="pw"><br>
+<span id="p"></span><br>
+
+Enter confirm password:<br>
+<input type="password" name="cpass" id="cpw"><br>
+<span id="c"></span><br>
+Enter mobile no:<br>
+<input type="text" name="num" id="mobile"><br>
+<span id="m"></span><br>
+
+Enter Emailid:<br>
+<input type="email" name="mail" id="eid"><br><br>
+<span id="e"></span><br>
+<input type="submit" value="Register">
+
+</form>
+</center>
+
+</body>
+</html>

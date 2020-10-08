@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+function set(name) {
+document.myform.hTextField.value=name;
+}
+</script>
+</head>
+<body>
+<form name="myform" action="CalculatorServlet">
+<table bgcolor="green" border="2">
+<caption>Calculator</caption>
+<tr>
+<td><label for="">enter first number</label></td>
+<td><input type="text" name="fno"></td>
+</tr>
+<tr>
+<td><label for="">enter second number</label></td>
+<td><input type="text" name="sno"></td>
+</tr>
+<tr><td><input type=hidden name="hTextField"></td></tr>
+<tr>
+<td><input type="submit" value="Add" onClick="set('CLICK_ADD')"></td>
+<td><input type="submit" value="Sub" onClick="set('CLICK_SUB')"></td>
+</tr>
+<tr>
+<td><input type="submit" value="Mul" onClick="set('CLICK_MUL')"></td>
+<td><input type="submit" value="Div" onClick="set('CLICK_DIV')"></td>
+</tr>
+</table>
+</form>
+
+</body>
+</html>
